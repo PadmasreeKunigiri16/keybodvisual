@@ -5,11 +5,10 @@ import {
   BookOpen,
   Eye,
   Sliders,
-  ShieldCheck,
+  Smile,
   ArrowRight,
   Sparkles,
   Zap,
-  CheckCircle,
 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { ActivePage } from '../components/Navbar';
@@ -33,7 +32,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setActivePage }) => {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold mb-6 shadow-sm">
           <Sparkles className="w-4 h-4 text-amber-400" />
-          <span>Smart • Accessible • Local-First</span>
+          <span>Smart • Accessible • Visual Typing</span>
         </div>
 
         {/* Title */}
@@ -47,7 +46,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setActivePage }) => {
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
-          VKey is a smart, accessible, and privacy-first typing platform designed to make typing visual, measurable, and fully customizable.
+          VKey is a smart, accessible typing platform designed to make typing visual, measurable, and fully customizable.
         </p>
 
         {/* CTA Buttons */}
@@ -108,7 +107,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setActivePage }) => {
             Built for Typing Mastery & Universal Accessibility
           </h2>
           <p className="text-sm text-slate-400">
-            Everything processed 100% locally inside your web browser.
+            Everything processed live inside your web browser.
           </p>
         </div>
 
@@ -200,40 +199,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setActivePage }) => {
 
           {/* Card 6 */}
           <div
-            onClick={() => setActivePage('privacy')}
+            onClick={() => setActivePage('emoji')}
             className="glass-panel p-6 rounded-2xl border border-amber-500/20 hover:border-amber-500/60 transition-all cursor-pointer group bg-[#141419]/60"
           >
             <div className="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <ShieldCheck className="w-5 h-5" />
+              <Smile className="w-5 h-5" />
             </div>
-            <h3 className="text-base font-bold text-white mb-2">100% Privacy First</h3>
+            <h3 className="text-base font-bold text-white mb-2">Emoji & Symbol Center</h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Zero external tracking scripts or key logging APIs. Complete JSON data export and one-click data deletion guarantees.
+              Browse, copy, or insert emojis, kaomojis, math symbols, and arrows directly into your keyboard workspace.
             </p>
             <span className="text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-              Privacy Control <ArrowRight className="w-3.5 h-3.5" />
+              Explore Emojis <ArrowRight className="w-3.5 h-3.5" />
             </span>
           </div>
-        </div>
-      </section>
-
-      {/* Local-First Assurance Banner */}
-      <section className="max-w-4xl mx-auto px-4">
-        <div className="glass-panel p-6 rounded-2xl border border-amber-500/40 bg-amber-500/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <CheckCircle className="w-8 h-8 text-amber-400 shrink-0" />
-            <div>
-              <h4 className="text-sm font-bold text-white">Your Typing Data Never Leaves Your Device</h4>
-              <p className="text-xs text-slate-400">All analytics, lessons, custom dictionaries, and sound profiles run 100% inside your local browser.</p>
-            </div>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setActivePage('privacy')}
-          >
-            Learn More
-          </Button>
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Keyboard, Zap } from 'lucide-react';
+import { Keyboard, Zap } from 'lucide-react';
 import { ActivePage } from './Navbar';
 
 interface FooterProps {
@@ -10,9 +10,9 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
   return (
     <footer className="bg-[#050507] border-t border-amber-500/20 mt-20 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Col */}
-          <div className="md:col-span-2 space-y-3">
+          <div className="space-y-3">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-black font-bold">
                 <Keyboard className="w-4 h-4" />
@@ -20,17 +20,13 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
               <span className="text-base font-extrabold text-amber-300">VKey Platform</span>
             </div>
             <p className="text-slate-400 text-xs max-w-sm leading-relaxed">
-              A smart, accessible, local-first typing assistant and typing practice platform designed to make typing visual, measurable, and customizable.
+              A smart, accessible typing assistant and typing practice platform designed to make typing visual, measurable, and customizable.
             </p>
-            <div className="flex items-center gap-2 pt-1 text-amber-400 font-medium">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
-              <span>100% Local-First & Privacy-Focused (No External Telemetry)</span>
-            </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs font-semibold text-amber-300 uppercase tracking-wider mb-3">Features</h4>
+            <h4 className="text-xs font-semibold text-amber-300 uppercase tracking-wider mb-3">Core Features</h4>
             <ul className="space-y-2">
               <li>
                 <button onClick={() => setActivePage('keyboard')} className="hover:text-amber-400 transition-colors">
@@ -47,17 +43,12 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
                   Typing Analytics & Heatmap
                 </button>
               </li>
-              <li>
-                <button onClick={() => setActivePage('emoji')} className="hover:text-amber-400 transition-colors">
-                  Emoji & Kaomoji Center
-                </button>
-              </li>
             </ul>
           </div>
 
-          {/* Accessibility & Privacy */}
+          {/* Accessibility & Customization */}
           <div>
-            <h4 className="text-xs font-semibold text-amber-300 uppercase tracking-wider mb-3">Accessibility & Privacy</h4>
+            <h4 className="text-xs font-semibold text-amber-300 uppercase tracking-wider mb-3">Accessibility & Design</h4>
             <ul className="space-y-2">
               <li>
                 <button onClick={() => setActivePage('accessibility')} className="hover:text-amber-400 transition-colors">
@@ -70,8 +61,8 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => setActivePage('privacy')} className="hover:text-amber-400 transition-colors">
-                  Privacy Center & Data Export
+                <button onClick={() => setActivePage('emoji')} className="hover:text-amber-400 transition-colors">
+                  Emoji & Kaomoji Center
                 </button>
               </li>
             </ul>

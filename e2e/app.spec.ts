@@ -15,7 +15,6 @@ test.describe('VKey End-to-End Tests', () => {
     await page.getByRole('button', { name: 'Try the Keyboard' }).click();
     await expect(page.locator('h1')).toContainText('Smart Virtual Keyboard');
 
-    // Type using virtual keys
     const letterE = page.locator('button[data-key="e"]');
     await expect(letterE).toBeVisible();
     await letterE.click();
@@ -50,13 +49,5 @@ test.describe('VKey End-to-End Tests', () => {
     const contrastToggle = page.locator('#toggle-highContrast, button[role="switch"]').first();
     await contrastToggle.click();
     await expect(page.locator('body')).toHaveClass(/theme-high-contrast/);
-  });
-
-  test('should export user typing data from Privacy Center', async ({ page }) => {
-    await page.getByRole('button', { name: 'Privacy', exact: true }).click();
-    await expect(page.locator('h1')).toContainText('Privacy Center');
-
-    const exportBtn = page.getByRole('button', { name: 'Download My Typing Data' });
-    await expect(exportBtn).toBeVisible();
   });
 });

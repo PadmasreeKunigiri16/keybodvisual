@@ -5,7 +5,6 @@ import {
   BookOpen,
   Eye,
   Sliders,
-  ShieldCheck,
   Smile,
   Home,
   Menu,
@@ -21,7 +20,6 @@ export type ActivePage =
   | 'analytics'
   | 'accessibility'
   | 'customization'
-  | 'privacy'
   | 'emoji';
 
 interface NavbarProps {
@@ -43,7 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'accessibility', label: 'Accessibility', icon: <Eye className="w-4 h-4" /> },
     { id: 'customization', label: 'Customize', icon: <Sliders className="w-4 h-4" /> },
     { id: 'emoji', label: 'Emoji Center', icon: <Smile className="w-4 h-4" /> },
-    { id: 'privacy', label: 'Privacy', icon: <ShieldCheck className="w-4 h-4" /> },
   ];
 
   return (

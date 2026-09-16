@@ -11,13 +11,11 @@ import { AnalyticsPage } from './pages/AnalyticsPage';
 import { AccessibilityPage } from './pages/AccessibilityPage';
 import { CustomizationPage } from './pages/CustomizationPage';
 import { EmojiPage } from './pages/EmojiPage';
-import { PrivacyPage } from './pages/PrivacyPage';
 
 // Hooks & Services
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useKeyboardSettings } from './hooks/useKeyboardSettings';
 import { TypingSession } from './types';
-import { ExportManager } from './services/exportManager';
 
 export function App() {
   const [activePage, setActivePage] = useState<ActivePage>('landing');
@@ -44,13 +42,6 @@ export function App() {
     if (clean && !customWords.includes(clean)) {
       setCustomWords(prev => [...prev, clean]);
     }
-  };
-
-  const handleClearAllData = () => {
-    ExportManager.clearAllData();
-    setSessions([]);
-    setCustomWords([]);
-    resetAllSettings();
   };
 
   // Aggregated Key Usage & Key Errors across all sessions for Heatmaps
@@ -137,16 +128,6 @@ export function App() {
             onInsertEmoji={emoji => {
               setActivePage('keyboard');
             }}
-          />
-        )}
-
-        {activePage === 'privacy' && (
-          <PrivacyPage
-            sessions={sessions}
-            accessibility={accessibility}
-            customization={customization}
-            customWords={customWords}
-            onClearAllData={handleClearAllData}
           />
         )}
       </main>
