@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Mode Defaults: Gold & White */
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #141419;
+    --text-primary: #ffffff;
+    --text-secondary: #fcd34d;
+    --accent-color: #f59e0b;
+    --key-bg: rgba(245, 158, 11, 0.1);
+    --key-active: #f59e0b;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  body.font-dyslexic {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  }
+
+  /* Light Mode: Gold & Black */
+  body.theme-light {
+    --bg-primary: #fcfbf7;
+    --bg-secondary: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #92400e;
+    --accent-color: #d97706;
+    --key-bg: #f3efe6;
+    --key-active: #d97706;
+    background-color: #fcfbf7;
+    color: #000000;
+  }
+
+  body.theme-high-contrast {
+    --bg-primary: #000000;
+    --bg-secondary: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #ffff00;
+    --accent-color: #ffff00;
+    --key-bg: #333333;
+    --key-active: #ffff00;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  body.theme-cyberpunk {
+    --bg-primary: #0d0221;
+    --bg-secondary: #261447;
+    --text-primary: #ff007f;
+    --text-secondary: #00f6ff;
+    --accent-color: #00f6ff;
+    --key-bg: rgba(255, 0, 127, 0.2);
+    --key-active: #00f6ff;
+    background-color: #0d0221;
+    color: #ff007f;
+  }
+}
+
+/* Glassmorphic utilities */
+.glass-panel {
+  background: rgba(20, 20, 25, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  color: #000000;
+}
+
+.theme-high-contrast .glass-panel {
+  background: #121212;
+  border: 2px solid #ffff00;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.6);
+}

@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+dist-ssr/
+
+# Playwright reports and artifacts
+playwright-report/
+test-results/
+
+# System and IDE files
+.DS_Store
+*.local
+*.log
